@@ -1,0 +1,8 @@
+---
+- name: Facts
+  hosts: all
+  become: no
+  tasks: 
+     - name: Mostrar Facts.
+       debug: var=ansible_nodename 
+...

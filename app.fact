@@ -1,0 +1,8 @@
+{
+   "package":
+    {
+      "web_pkg": "apache2",
+      "web_srv": "apache2",
+      "db_pkg": "postgresql"
+     }
+}

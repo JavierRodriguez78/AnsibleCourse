@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: Instalando {{ item }}
+      apt:
+         name: "{{item}}"
+         state: latest
+      with_items:
+         - "{{ ansible_local.app.package.db_pkg }}"
+         - "{{ ansible_local.app.package.web_pkg}}"
+    - name: Servicios 
+      service:
+         name: "{{ ansible_local.app.package.web_srv }}"
+         state: started
+         enabled: true
+...
