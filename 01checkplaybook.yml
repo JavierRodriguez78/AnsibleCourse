@@ -1,0 +1,12 @@
+# nuestro primer playbook
+---
+- hosts: all
+  tasks:
+   - name: Vehiculos
+     shell: 
+        cmd: echo {{ item }}
+     with_items:
+        - coche
+        - avion
+        - moto
+...

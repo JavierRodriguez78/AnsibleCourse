@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks: 
+    - name: Update
+      apt:
+        force_apt_get: true
+        update_cache: yes
+    - name: Install Apache2
+      apt: 
+        name: apache2
+        state: latest
+    - name: Up Apache2 Service
+      service:
+         name: apache2
+         state: restarted
+    - debug: 
+        msg  : "Apache ya instalado"
+     

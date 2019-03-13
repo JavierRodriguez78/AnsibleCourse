@@ -1,0 +1,18 @@
+---
+- name: Users
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create user
+      user: 
+            name: deploy
+            shell: /bin/bash
+            groups: sudo
+    - name: Create user2
+      user : >
+         name=deploy2 shell=/bin/bash groups=sudo
+    - name: Create user3
+      user: name=deploy3 shell=/bin/bash
+      args:
+        groups: sudo
+...      
