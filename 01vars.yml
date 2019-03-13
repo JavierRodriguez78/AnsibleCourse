@@ -1,0 +1,23 @@
+---
+- name: Utilizando Vars
+  hosts: all
+  become: yes
+  vars:
+    - package: mariadb-server
+    - service: mysql
+  tasks:
+    - name: Actualización.
+      apt: 
+        force_apt_get: true
+        update_cache: yes
+    - name: Instalando paquete "{{package}}"
+      apt:
+         name: "{{package}}"
+         state: installed
+    - name: Arrancado servicio "{{service}}"
+      service:
+         name: "{{service}}"
+         state: started
+         enabled: true
+... 
+   

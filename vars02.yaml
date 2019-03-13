@@ -1,0 +1,8 @@
+---
+users:
+   xavi:
+     nombre: xavi
+     apellidos: rodriguez
+     home: /home/xavi
+...
+

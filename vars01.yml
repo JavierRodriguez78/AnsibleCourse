@@ -1,0 +1,9 @@
+---
+package:
+ - mariadb-server
+ - apache2
+ - libapache2-mod-php5
+ - php5
+ - php5-mcrypt
+service: apache2
+...

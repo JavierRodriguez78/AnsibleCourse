@@ -1,0 +1,14 @@
+---
+- name: Utilizando Vars
+  hosts: all
+  become: yes
+  vars_files:
+    - vars02.yaml
+  tasks:
+    - name: Creando Usuarios {{users.xavi.nombre}}
+      user:
+         name: "{{users.xavi.nombre}}"
+         home: "{{users.xavi.home}}"
+         comment: "{{users.xavi.nombre}} {{users.xavi.apellidos}}"
+            
+...
