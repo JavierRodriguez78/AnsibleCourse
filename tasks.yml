@@ -1,0 +1,10 @@
+---
+- name: instalando {{ pkg }}
+  apt:
+    name: "{{pkg}}"
+    state: latest
+- name: Iniciando {{srv}}
+  service:
+    name: "{{ serv }}"
+    state: "{{ state }}"
+    enabled: true

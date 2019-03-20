@@ -1,0 +1,16 @@
+---
+- name: Añadiendo tareas.
+  hosts: dockeransible3
+  vars:
+   include_vars: variables.yml
+  tasks:
+    - name: Añadir variables.
+      include_vars: variables.yml 
+    - name: Añadir tareas
+      import_tasks: tasks.yml
+      vars:
+       pkg: mariadb-server
+       serv: mysql
+       state: started
+...
+

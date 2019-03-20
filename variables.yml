@@ -1,0 +1,6 @@
+---
+packages:
+   pkg: vsftpd
+services:
+   srv: vsftpd
+...
