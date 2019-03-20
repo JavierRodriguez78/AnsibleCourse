@@ -1,0 +1,18 @@
+---
+- hosts: dockeransible3
+  tasks:
+      - name: Instalando pkg no existe
+        apt: 
+          name: ddfldj
+          state: latest
+        register: salida
+        ignore_errors: true
+      - name: Visualiza errores
+        debug:
+          var: salida.msg
+        when: salida is failed
+      - name: Visualiza salida
+        debug:
+          var: salida.stdout_lines
+        when: salida is not failed
+...

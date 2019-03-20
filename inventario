@@ -1,3 +1,4 @@
 
-dockeransible ansible_host=172.17.0.7 
-dockeransible2 ansible_host=172.17.0.8 ansible_user=root ansible_password=shoogheith3S
+dockeransible ansible_host=172.17.0.8  ansible_user=root
+dockeransible2 ansible_host=172.17.0.9 ansible_user=root 
+dockeransible3 ansible_host=172.17.0.10 ansible_user=root

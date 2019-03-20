@@ -1,0 +1,13 @@
+---
+- hosts: dockeransible2
+  tasks: 
+    - name: Instalando nginx
+      apt:
+         name: sambo
+         state: latest
+      register: salida
+    - debug:
+         var: salida.stdout_lines
+      when: salida is changed
+...
+
