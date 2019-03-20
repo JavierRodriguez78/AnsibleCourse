@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars: 
+    usuario: 'Xavi'
+  tasks:
+    - name: Instalando apache2
+      apt:
+       name: apache2
+       state: latest
+    - name: Vamos a crear el index
+      template:
+        src: prueba.j2
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: 0644
+    - name: Reiniciar servicio
+      service:
+        name: apache2
+        state: restarted
+        enabled: true
+    
+...
